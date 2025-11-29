@@ -1,0 +1,884 @@
+2025-11-28T23:58:51.173Z [INFO] [SYSTEM] Using native fetch API
+2025-11-28T23:58:51.191Z [INFO] [PROXY] Starting WordPress MCP Proxy with enhanced authentication
+2025-11-28T23:58:51.193Z [INFO] [PROXY] MCP server connected to transport successfully
+2025-11-28T23:58:51.200Z [INFO] [INIT] 📩 Client Initialize Request received
+2025-11-28T23:58:51.200Z [DEBUG] [INIT] Initialize request details:
+{
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55"
+    }
+  }
+}
+2025-11-28T23:58:51.200Z [INFO] [INIT] 🔄 Initializing WordPress connection with client parameters
+2025-11-28T23:58:51.201Z [INFO] [TRANSPORT_DETECT] 🔍 Starting transport detection and WordPress API initialization...
+2025-11-28T23:58:51.201Z [INFO] [TRANSPORT_DETECT] 📋 Added proxy information to clientInfo
+{
+  "originalClient": "claude-code",
+  "proxyName": "@automattic/mcp-wordpress-remote",
+  "proxyVersion": "0.2.18"
+}
+2025-11-28T23:58:51.201Z [INFO] [TRANSPORT_DETECT] 📡 Attempting JSON-RPC transport...
+2025-11-28T23:58:51.201Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-28T23:58:51.201Z [INFO] [TRANSPORT_DETECT] Sending initialization message via JSON-RPC:
+{
+  "method": "initialize",
+  "id": 1,
+  "jsonrpc": "2.0",
+  "hasParams": true
+}
+2025-11-28T23:58:51.201Z [DEBUG] [TRANSPORT_DETECT] Complete JSON-RPC init message:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55",
+      "proxied": {
+        "name": "@automattic/mcp-wordpress-remote",
+        "version": "0.2.18"
+      }
+    },
+    "_proxy_request_id": 1
+  }
+}
+2025-11-28T23:58:51.202Z [INFO] [API] Request method: initialize (JSON-RPC)
+2025-11-28T23:58:51.202Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"initialize","id":1,"params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"2.0.55","proxied":{"name":"@automattic/mcp-wordpress-remote","version":"0.2.18"}},"_proxy_request_id":1}}
+2025-11-28T23:58:51.202Z [INFO] [AUTH] Using WordPress Basic Auth for method: initialize
+2025-11-28T23:58:51.202Z [DEBUG] [AUTH] Username length: 5
+2025-11-28T23:58:51.202Z [DEBUG] [AUTH] Password length: 29
+2025-11-28T23:58:51.203Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-28T23:58:51.203Z [DEBUG] [API] Environment: development
+2025-11-28T23:58:51.203Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-28T23:58:51.203Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.203Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-28T23:58:51.203Z [INFO] [API] Sending request to WordPress API...
+2025-11-28T23:58:51.203Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.203Z [DEBUG] [API] Request method: POST
+2025-11-28T23:58:51.942Z [DEBUG] [API] Response status: 200
+2025-11-28T23:58:51.949Z [INFO] [API] Response received successfully
+2025-11-28T23:58:51.949Z [DEBUG] [API] Response data: {"protocolVersion":"2025-03-26","serverInfo":{"name":"WordPress MCP Server","version":"0.2.5","siteInfo":{"name":"Devactivo Diseño Y Desarrollo Web Tuxtla","url":"https://devactivo.com","description":"Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.","language":"es","charset":"UTF-8"}},"capabilities":{"tools":{"list":true,"call":true},"resources":{"list":true,"subscribe":true,"listChanged":true},"prompts":{"list":true,"get":true,"listChanged":true},"logging":{},"completion":{},"roots":{"list":true,"listChanged":true}},"instructions":"This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."}
+2025-11-28T23:58:51.949Z [INFO] [TRANSPORT_DETECT] ✅ JSON-RPC transport detected and working
+2025-11-28T23:58:51.949Z [DEBUG] [TRANSPORT_DETECT] JSON-RPC initialization response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-28T23:58:51.950Z [WARN] [PROXY] No session ID received from WordPress - continuing without session
+2025-11-28T23:58:51.950Z [INFO] [PROXY] WordPress connection initialized successfully using jsonrpc transport
+2025-11-28T23:58:51.950Z [INFO] [INIT] ✅ Returning WordPress server initialize response
+2025-11-28T23:58:51.950Z [DEBUG] [INIT] Initialize response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-28T23:58:51.956Z [INFO] [CLIENT] 📩 Client Message: ListTools
+2025-11-28T23:58:51.957Z [INFO] [CLIENT] Request ID: none | Method: tools/list
+2025-11-28T23:58:51.957Z [INFO] [CLIENT] No request parameters
+2025-11-28T23:58:51.957Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 1
+2025-11-28T23:58:51.957Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "tools/list"
+}
+2025-11-28T23:58:51.957Z [DEBUG] [MCP] Processing ListToolsRequest
+2025-11-28T23:58:51.957Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "tools/list",
+  "id": 2,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-28T23:58:51.957Z [INFO] [API] Request method: tools/list (JSON-RPC)
+2025-11-28T23:58:51.957Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"tools/list","id":2,"params":{"_proxy_request_id":2}}
+2025-11-28T23:58:51.957Z [INFO] [AUTH] Using WordPress Basic Auth for method: tools/list
+2025-11-28T23:58:51.957Z [DEBUG] [AUTH] Username length: 5
+2025-11-28T23:58:51.957Z [DEBUG] [AUTH] Password length: 29
+2025-11-28T23:58:51.957Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-28T23:58:51.957Z [DEBUG] [API] Environment: development
+2025-11-28T23:58:51.958Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-28T23:58:51.958Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.958Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-28T23:58:51.958Z [INFO] [API] Sending request to WordPress API...
+2025-11-28T23:58:51.958Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.958Z [DEBUG] [API] Request method: POST
+2025-11-28T23:58:51.960Z [INFO] [CLIENT] 📩 Client Message: ListPrompts
+2025-11-28T23:58:51.960Z [INFO] [CLIENT] Request ID: none | Method: prompts/list
+2025-11-28T23:58:51.960Z [INFO] [CLIENT] No request parameters
+2025-11-28T23:58:51.960Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 2
+2025-11-28T23:58:51.960Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "prompts/list"
+}
+2025-11-28T23:58:51.960Z [DEBUG] [MCP] Processing ListPromptsRequest
+2025-11-28T23:58:51.960Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "prompts/list",
+  "id": 3,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-28T23:58:51.960Z [INFO] [API] Request method: prompts/list (JSON-RPC)
+2025-11-28T23:58:51.960Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"prompts/list","id":3,"params":{"_proxy_request_id":3}}
+2025-11-28T23:58:51.960Z [INFO] [AUTH] Using WordPress Basic Auth for method: prompts/list
+2025-11-28T23:58:51.960Z [DEBUG] [AUTH] Username length: 5
+2025-11-28T23:58:51.960Z [DEBUG] [AUTH] Password length: 29
+2025-11-28T23:58:51.961Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-28T23:58:51.961Z [DEBUG] [API] Environment: development
+2025-11-28T23:58:51.961Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-28T23:58:51.961Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.961Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-28T23:58:51.961Z [INFO] [API] Sending request to WordPress API...
+2025-11-28T23:58:51.961Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.961Z [DEBUG] [API] Request method: POST
+2025-11-28T23:58:51.963Z [INFO] [CLIENT] 📩 Client Message: ListResources
+2025-11-28T23:58:51.963Z [INFO] [CLIENT] Request ID: none | Method: resources/list
+2025-11-28T23:58:51.963Z [INFO] [CLIENT] No request parameters
+2025-11-28T23:58:51.963Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 3
+2025-11-28T23:58:51.963Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "resources/list"
+}
+2025-11-28T23:58:51.963Z [DEBUG] [MCP] Processing ListResourcesRequest
+2025-11-28T23:58:51.963Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "resources/list",
+  "id": 4,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-28T23:58:51.964Z [INFO] [API] Request method: resources/list (JSON-RPC)
+2025-11-28T23:58:51.964Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"resources/list","id":4,"params":{"_proxy_request_id":4}}
+2025-11-28T23:58:51.964Z [INFO] [AUTH] Using WordPress Basic Auth for method: resources/list
+2025-11-28T23:58:51.964Z [DEBUG] [AUTH] Username length: 5
+2025-11-28T23:58:51.964Z [DEBUG] [AUTH] Password length: 29
+2025-11-28T23:58:51.964Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-28T23:58:51.964Z [DEBUG] [API] Environment: development
+2025-11-28T23:58:51.964Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-28T23:58:51.964Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.964Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-28T23:58:51.964Z [INFO] [API] Sending request to WordPress API...
+2025-11-28T23:58:51.964Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-28T23:58:51.964Z [DEBUG] [API] Request method: POST
+2025-11-28T23:58:52.216Z [DEBUG] [API] Response status: 200
+2025-11-28T23:58:52.218Z [INFO] [API] Response received successfully
+2025-11-28T23:58:52.218Z [DEBUG] [API] Response data: {"tools":[{"name":"get_site_info","description":"Provides detailed information about the WordPress site like site name, url, description, admin email, plugins, themes, users, and more","type":"read","inputSchema":{"type":"object"},"annotations":{"title":"Get Site Info","readOnlyHint":true,"openWorldHint":false}},{"name":"wp_get_media_file","description":"Get the actual file content (blob) of a WordPress media item","type":"read","inputSchema":{"type":"object","properties":{"id":{"type":"integer","description":"The ID of the media item"},"size":{"type":"string","description":"Optional. The size of the image to retrieve (thumbnail, medium, large, full). Defaults to full/original size."}},"required":["id"]},"annotations":{"title":"Get Media File","readOnlyHint":true,"openWorldHint":false}},{"name":"list_api_functions","description":"List all available WordPress REST API endpoints that support CRUD operations (Create, Read, Update, Delete). Use this first to discover what API functions are available before inspecting or calling them.","type":"read","inputSchema":{"type":"object"},"annotations":{"title":"List API Functions","readOnlyHint":true,"openWorldHint":false}},{"name":"get_function_details","description":"Get detailed metadata for a specific WordPress REST API endpoint and HTTP method. Includes available parameters, required fields, authentication needs, and expected response structure. Use this to get the details of a specific function before calling it.","type":"read","inputSchema":{"type":"object","properties":{"route":{"type":"string","description":"The REST API route (e.g., \"/wp/v2/posts\", \"/wp/v2/users\")"},"method":{"type":"string","enum":["GET","POST","PATCH","DELETE"],"description":"The HTTP method to retrieve metadata for"}},"required":["route","method"]},"annotations":{"title":"Get Function Details","readOnlyHint":true,"openWorldHint":false}},{"name":"run_api_function","description":"Execute a specific WordPress REST API function by providing the endpoint route, HTTP method, and any required parameters or request body. Supports standard CRUD operations: GET (read), POST (create), PATCH (update), DELETE (remove).","type":"action","inputSchema":{"type":"object","properties":{"route":{"type":"string","description":"The REST API route (e.g., \"/wp/v2/posts\", \"/wp/v2/users/123\")"},"method":{"type":"string","enum":["GET","POST","PATCH","DELETE"],"description":"The HTTP method to use: GET, POST, PATCH, or DELETE"},"data":{"type":"object","description":"Payload for POST or PATCH requests. Not required for GET or DELETE."}},"required":["route","method"]},"annotations":{"title":"Run API Function","readOnlyHint":false,"destructiveHint":true,"idempotentHint":false,"openWorldHint":false}}]}
+2025-11-28T23:58:52.218Z [INFO] [CLIENT] ✅ Client Response: ListTools completed in 261ms
+2025-11-28T23:58:52.218Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "tools"
+  ]
+}
+2025-11-28T23:58:52.390Z [DEBUG] [API] Response status: 200
+2025-11-28T23:58:52.391Z [INFO] [API] Response received successfully
+2025-11-28T23:58:52.392Z [DEBUG] [API] Response data: {"resources":[{"uri":"WordPress://site-info","name":"site-info","description":"Provides general information about the WordPress site including site details, plugins, themes, and users","mimeType":"application/json"},{"uri":"WordPress://plugin-info","name":"plugin-info","description":"Provides detailed information about active WordPress plugins","mimeType":"application/json"},{"uri":"WordPress://theme-info","name":"theme-info","description":"Provides detailed information about the active WordPress theme","mimeType":"application/json"},{"uri":"WordPress://user-info","name":"user-info","description":"Provides detailed information about registered WordPress users and their roles","mimeType":"application/json"},{"uri":"WordPress://site-settings","name":"site-settings","description":"Provides detailed information about WordPress site settings","mimeType":"application/json"}],"nextCursor":""}
+2025-11-28T23:58:52.392Z [INFO] [CLIENT] ✅ Client Response: ListResources completed in 429ms
+2025-11-28T23:58:52.392Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "resources",
+    "nextCursor"
+  ]
+}
+2025-11-28T23:58:52.418Z [DEBUG] [API] Response status: 200
+2025-11-28T23:58:52.419Z [INFO] [API] Response received successfully
+2025-11-28T23:58:52.419Z [DEBUG] [API] Response data: {"prompts":[{"name":"get-site-info","description":"Get detailed information about the WordPress site","arguments":[{"name":"info_type","description":"The type of information to retrieve (e.g., general, plugins, theme, users, settings)","required":false,"type":"string"}]},{"name":"analyze-sales","description":"Analyze WooCommerce sales data","arguments":[{"name":"time_span","description":"The time period to analyze (e.g., last_7_days, last_30_days, last_month, last_quarter, last_year)","required":true,"type":"string"}]}]}
+2025-11-28T23:58:52.419Z [INFO] [CLIENT] ✅ Client Response: ListPrompts completed in 459ms
+2025-11-28T23:58:52.419Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "prompts"
+  ]
+}
+2025-11-29T00:00:06.780Z [INFO] [SYSTEM] Using native fetch API
+2025-11-29T00:00:06.781Z [INFO] [PROXY] Starting WordPress MCP Proxy with enhanced authentication
+2025-11-29T00:00:06.783Z [INFO] [PROXY] MCP server connected to transport successfully
+2025-11-29T00:00:06.800Z [INFO] [INIT] 📩 Client Initialize Request received
+2025-11-29T00:00:06.801Z [DEBUG] [INIT] Initialize request details:
+{
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55"
+    }
+  }
+}
+2025-11-29T00:00:06.801Z [INFO] [INIT] 🔄 Initializing WordPress connection with client parameters
+2025-11-29T00:00:06.802Z [INFO] [TRANSPORT_DETECT] 🔍 Starting transport detection and WordPress API initialization...
+2025-11-29T00:00:06.803Z [INFO] [TRANSPORT_DETECT] 📋 Added proxy information to clientInfo
+{
+  "originalClient": "claude-code",
+  "proxyName": "@automattic/mcp-wordpress-remote",
+  "proxyVersion": "0.2.18"
+}
+2025-11-29T00:00:06.803Z [INFO] [TRANSPORT_DETECT] 📡 Attempting JSON-RPC transport...
+2025-11-29T00:00:06.804Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:06.805Z [INFO] [TRANSPORT_DETECT] Sending initialization message via JSON-RPC:
+{
+  "method": "initialize",
+  "id": 1,
+  "jsonrpc": "2.0",
+  "hasParams": true
+}
+2025-11-29T00:00:06.805Z [DEBUG] [TRANSPORT_DETECT] Complete JSON-RPC init message:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55",
+      "proxied": {
+        "name": "@automattic/mcp-wordpress-remote",
+        "version": "0.2.18"
+      }
+    },
+    "_proxy_request_id": 1
+  }
+}
+2025-11-29T00:00:06.806Z [INFO] [API] Request method: initialize (JSON-RPC)
+2025-11-29T00:00:06.806Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"initialize","id":1,"params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"2.0.55","proxied":{"name":"@automattic/mcp-wordpress-remote","version":"0.2.18"}},"_proxy_request_id":1}}
+2025-11-29T00:00:06.806Z [INFO] [AUTH] Using WordPress Basic Auth for method: initialize
+2025-11-29T00:00:06.806Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:06.807Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:06.807Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:06.807Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:06.807Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:06.808Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:06.809Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:06.809Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:06.809Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:06.810Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:07.914Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:07.921Z [INFO] [API] Response received successfully
+2025-11-29T00:00:07.921Z [DEBUG] [API] Response data: {"protocolVersion":"2025-03-26","serverInfo":{"name":"WordPress MCP Server","version":"0.2.5","siteInfo":{"name":"Devactivo Diseño Y Desarrollo Web Tuxtla","url":"https://devactivo.com","description":"Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.","language":"es","charset":"UTF-8"}},"capabilities":{"tools":{"list":true,"call":true},"resources":{"list":true,"subscribe":true,"listChanged":true},"prompts":{"list":true,"get":true,"listChanged":true},"logging":{},"completion":{},"roots":{"list":true,"listChanged":true}},"instructions":"This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."}
+2025-11-29T00:00:07.921Z [INFO] [TRANSPORT_DETECT] ✅ JSON-RPC transport detected and working
+2025-11-29T00:00:07.921Z [DEBUG] [TRANSPORT_DETECT] JSON-RPC initialization response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-29T00:00:07.922Z [WARN] [PROXY] No session ID received from WordPress - continuing without session
+2025-11-29T00:00:07.922Z [INFO] [PROXY] WordPress connection initialized successfully using jsonrpc transport
+2025-11-29T00:00:07.922Z [INFO] [INIT] ✅ Returning WordPress server initialize response
+2025-11-29T00:00:07.922Z [DEBUG] [INIT] Initialize response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-29T00:00:11.581Z [INFO] [SYSTEM] Using native fetch API
+2025-11-29T00:00:11.581Z [INFO] [PROXY] Starting WordPress MCP Proxy with enhanced authentication
+2025-11-29T00:00:11.582Z [INFO] [PROXY] MCP server connected to transport successfully
+2025-11-29T00:00:11.588Z [INFO] [INIT] 📩 Client Initialize Request received
+2025-11-29T00:00:11.588Z [DEBUG] [INIT] Initialize request details:
+{
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55"
+    }
+  }
+}
+2025-11-29T00:00:11.589Z [INFO] [INIT] 🔄 Initializing WordPress connection with client parameters
+2025-11-29T00:00:11.589Z [INFO] [TRANSPORT_DETECT] 🔍 Starting transport detection and WordPress API initialization...
+2025-11-29T00:00:11.589Z [INFO] [TRANSPORT_DETECT] 📋 Added proxy information to clientInfo
+{
+  "originalClient": "claude-code",
+  "proxyName": "@automattic/mcp-wordpress-remote",
+  "proxyVersion": "0.2.18"
+}
+2025-11-29T00:00:11.589Z [INFO] [TRANSPORT_DETECT] 📡 Attempting JSON-RPC transport...
+2025-11-29T00:00:11.590Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:11.590Z [INFO] [TRANSPORT_DETECT] Sending initialization message via JSON-RPC:
+{
+  "method": "initialize",
+  "id": 1,
+  "jsonrpc": "2.0",
+  "hasParams": true
+}
+2025-11-29T00:00:11.590Z [DEBUG] [TRANSPORT_DETECT] Complete JSON-RPC init message:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55",
+      "proxied": {
+        "name": "@automattic/mcp-wordpress-remote",
+        "version": "0.2.18"
+      }
+    },
+    "_proxy_request_id": 1
+  }
+}
+2025-11-29T00:00:11.591Z [INFO] [API] Request method: initialize (JSON-RPC)
+2025-11-29T00:00:11.591Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"initialize","id":1,"params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"2.0.55","proxied":{"name":"@automattic/mcp-wordpress-remote","version":"0.2.18"}},"_proxy_request_id":1}}
+2025-11-29T00:00:11.591Z [INFO] [AUTH] Using WordPress Basic Auth for method: initialize
+2025-11-29T00:00:11.591Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:11.591Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:11.591Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:11.591Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:11.592Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:11.592Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:11.592Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:11.592Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:11.592Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:11.592Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:12.106Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:12.112Z [INFO] [API] Response received successfully
+2025-11-29T00:00:12.113Z [DEBUG] [API] Response data: {"protocolVersion":"2025-03-26","serverInfo":{"name":"WordPress MCP Server","version":"0.2.5","siteInfo":{"name":"Devactivo Diseño Y Desarrollo Web Tuxtla","url":"https://devactivo.com","description":"Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.","language":"es","charset":"UTF-8"}},"capabilities":{"tools":{"list":true,"call":true},"resources":{"list":true,"subscribe":true,"listChanged":true},"prompts":{"list":true,"get":true,"listChanged":true},"logging":{},"completion":{},"roots":{"list":true,"listChanged":true}},"instructions":"This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."}
+2025-11-29T00:00:12.113Z [INFO] [TRANSPORT_DETECT] ✅ JSON-RPC transport detected and working
+2025-11-29T00:00:12.113Z [DEBUG] [TRANSPORT_DETECT] JSON-RPC initialization response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-29T00:00:12.113Z [WARN] [PROXY] No session ID received from WordPress - continuing without session
+2025-11-29T00:00:12.113Z [INFO] [PROXY] WordPress connection initialized successfully using jsonrpc transport
+2025-11-29T00:00:12.113Z [INFO] [INIT] ✅ Returning WordPress server initialize response
+2025-11-29T00:00:12.113Z [DEBUG] [INIT] Initialize response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-29T00:00:12.120Z [INFO] [CLIENT] 📩 Client Message: ListTools
+2025-11-29T00:00:12.120Z [INFO] [CLIENT] Request ID: none | Method: tools/list
+2025-11-29T00:00:12.120Z [INFO] [CLIENT] No request parameters
+2025-11-29T00:00:12.120Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 1
+2025-11-29T00:00:12.120Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "tools/list"
+}
+2025-11-29T00:00:12.120Z [DEBUG] [MCP] Processing ListToolsRequest
+2025-11-29T00:00:12.121Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "tools/list",
+  "id": 2,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:12.121Z [INFO] [API] Request method: tools/list (JSON-RPC)
+2025-11-29T00:00:12.121Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"tools/list","id":2,"params":{"_proxy_request_id":2}}
+2025-11-29T00:00:12.121Z [INFO] [AUTH] Using WordPress Basic Auth for method: tools/list
+2025-11-29T00:00:12.121Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:12.121Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:12.121Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:12.121Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:12.121Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:12.122Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.122Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:12.122Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:12.122Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.122Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:12.124Z [INFO] [CLIENT] 📩 Client Message: ListPrompts
+2025-11-29T00:00:12.124Z [INFO] [CLIENT] Request ID: none | Method: prompts/list
+2025-11-29T00:00:12.124Z [INFO] [CLIENT] No request parameters
+2025-11-29T00:00:12.124Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 2
+2025-11-29T00:00:12.124Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "prompts/list"
+}
+2025-11-29T00:00:12.125Z [DEBUG] [MCP] Processing ListPromptsRequest
+2025-11-29T00:00:12.125Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "prompts/list",
+  "id": 3,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:12.125Z [INFO] [API] Request method: prompts/list (JSON-RPC)
+2025-11-29T00:00:12.125Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"prompts/list","id":3,"params":{"_proxy_request_id":3}}
+2025-11-29T00:00:12.125Z [INFO] [AUTH] Using WordPress Basic Auth for method: prompts/list
+2025-11-29T00:00:12.125Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:12.125Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:12.125Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:12.126Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:12.126Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:12.126Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.126Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:12.126Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:12.126Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.126Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:12.129Z [INFO] [CLIENT] 📩 Client Message: ListResources
+2025-11-29T00:00:12.130Z [INFO] [CLIENT] Request ID: none | Method: resources/list
+2025-11-29T00:00:12.130Z [INFO] [CLIENT] No request parameters
+2025-11-29T00:00:12.130Z [DEBUG] [CLIENT] Session context - ID: none, Transport: jsonrpc, Counter: 3
+2025-11-29T00:00:12.130Z [DEBUG] [CLIENT] Complete client request object:
+{
+  "method": "resources/list"
+}
+2025-11-29T00:00:12.130Z [DEBUG] [MCP] Processing ListResourcesRequest
+2025-11-29T00:00:12.131Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "resources/list",
+  "id": 4,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:12.131Z [INFO] [API] Request method: resources/list (JSON-RPC)
+2025-11-29T00:00:12.131Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"resources/list","id":4,"params":{"_proxy_request_id":4}}
+2025-11-29T00:00:12.131Z [INFO] [AUTH] Using WordPress Basic Auth for method: resources/list
+2025-11-29T00:00:12.131Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:12.131Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:12.131Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:12.131Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:12.132Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:12.132Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.132Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:12.132Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:12.132Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:12.132Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:12.401Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:12.403Z [INFO] [API] Response received successfully
+2025-11-29T00:00:12.403Z [DEBUG] [API] Response data: {"tools":[{"name":"get_site_info","description":"Provides detailed information about the WordPress site like site name, url, description, admin email, plugins, themes, users, and more","type":"read","inputSchema":{"type":"object"},"annotations":{"title":"Get Site Info","readOnlyHint":true,"openWorldHint":false}},{"name":"wp_get_media_file","description":"Get the actual file content (blob) of a WordPress media item","type":"read","inputSchema":{"type":"object","properties":{"id":{"type":"integer","description":"The ID of the media item"},"size":{"type":"string","description":"Optional. The size of the image to retrieve (thumbnail, medium, large, full). Defaults to full/original size."}},"required":["id"]},"annotations":{"title":"Get Media File","readOnlyHint":true,"openWorldHint":false}},{"name":"list_api_functions","description":"List all available WordPress REST API endpoints that support CRUD operations (Create, Read, Update, Delete). Use this first to discover what API functions are available before inspecting or calling them.","type":"read","inputSchema":{"type":"object"},"annotations":{"title":"List API Functions","readOnlyHint":true,"openWorldHint":false}},{"name":"get_function_details","description":"Get detailed metadata for a specific WordPress REST API endpoint and HTTP method. Includes available parameters, required fields, authentication needs, and expected response structure. Use this to get the details of a specific function before calling it.","type":"read","inputSchema":{"type":"object","properties":{"route":{"type":"string","description":"The REST API route (e.g., \"/wp/v2/posts\", \"/wp/v2/users\")"},"method":{"type":"string","enum":["GET","POST","PATCH","DELETE"],"description":"The HTTP method to retrieve metadata for"}},"required":["route","method"]},"annotations":{"title":"Get Function Details","readOnlyHint":true,"openWorldHint":false}},{"name":"run_api_function","description":"Execute a specific WordPress REST API function by providing the endpoint route, HTTP method, and any required parameters or request body. Supports standard CRUD operations: GET (read), POST (create), PATCH (update), DELETE (remove).","type":"action","inputSchema":{"type":"object","properties":{"route":{"type":"string","description":"The REST API route (e.g., \"/wp/v2/posts\", \"/wp/v2/users/123\")"},"method":{"type":"string","enum":["GET","POST","PATCH","DELETE"],"description":"The HTTP method to use: GET, POST, PATCH, or DELETE"},"data":{"type":"object","description":"Payload for POST or PATCH requests. Not required for GET or DELETE."}},"required":["route","method"]},"annotations":{"title":"Run API Function","readOnlyHint":false,"destructiveHint":true,"idempotentHint":false,"openWorldHint":false}}]}
+2025-11-29T00:00:12.403Z [INFO] [CLIENT] ✅ Client Response: ListTools completed in 283ms
+2025-11-29T00:00:12.403Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "tools"
+  ]
+}
+2025-11-29T00:00:12.531Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:12.533Z [INFO] [API] Response received successfully
+2025-11-29T00:00:12.533Z [DEBUG] [API] Response data: {"resources":[{"uri":"WordPress://site-info","name":"site-info","description":"Provides general information about the WordPress site including site details, plugins, themes, and users","mimeType":"application/json"},{"uri":"WordPress://plugin-info","name":"plugin-info","description":"Provides detailed information about active WordPress plugins","mimeType":"application/json"},{"uri":"WordPress://theme-info","name":"theme-info","description":"Provides detailed information about the active WordPress theme","mimeType":"application/json"},{"uri":"WordPress://user-info","name":"user-info","description":"Provides detailed information about registered WordPress users and their roles","mimeType":"application/json"},{"uri":"WordPress://site-settings","name":"site-settings","description":"Provides detailed information about WordPress site settings","mimeType":"application/json"}],"nextCursor":""}
+2025-11-29T00:00:12.533Z [INFO] [CLIENT] ✅ Client Response: ListResources completed in 403ms
+2025-11-29T00:00:12.533Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "resources",
+    "nextCursor"
+  ]
+}
+2025-11-29T00:00:12.556Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:12.558Z [INFO] [API] Response received successfully
+2025-11-29T00:00:12.558Z [DEBUG] [API] Response data: {"prompts":[{"name":"get-site-info","description":"Get detailed information about the WordPress site","arguments":[{"name":"info_type","description":"The type of information to retrieve (e.g., general, plugins, theme, users, settings)","required":false,"type":"string"}]},{"name":"analyze-sales","description":"Analyze WooCommerce sales data","arguments":[{"name":"time_span","description":"The time period to analyze (e.g., last_7_days, last_30_days, last_month, last_quarter, last_year)","required":true,"type":"string"}]}]}
+2025-11-29T00:00:12.558Z [INFO] [CLIENT] ✅ Client Response: ListPrompts completed in 433ms
+2025-11-29T00:00:12.558Z [DEBUG] [CLIENT] Response sent to client:
+{
+  "hasResponse": true,
+  "responseKeys": [
+    "prompts"
+  ]
+}
+2025-11-29T00:00:37.205Z [INFO] [SYSTEM] Using native fetch API
+2025-11-29T00:00:37.206Z [INFO] [PROXY] Starting WordPress MCP Proxy with enhanced authentication
+2025-11-29T00:00:37.208Z [INFO] [PROXY] MCP server connected to transport successfully
+2025-11-29T00:00:37.214Z [INFO] [INIT] 📩 Client Initialize Request received
+2025-11-29T00:00:37.214Z [DEBUG] [INIT] Initialize request details:
+{
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55"
+    }
+  }
+}
+2025-11-29T00:00:37.215Z [INFO] [INIT] 🔄 Initializing WordPress connection with client parameters
+2025-11-29T00:00:37.215Z [INFO] [TRANSPORT_DETECT] 🔍 Starting transport detection and WordPress API initialization...
+2025-11-29T00:00:37.215Z [INFO] [TRANSPORT_DETECT] 📋 Added proxy information to clientInfo
+{
+  "originalClient": "claude-code",
+  "proxyName": "@automattic/mcp-wordpress-remote",
+  "proxyVersion": "0.2.18"
+}
+2025-11-29T00:00:37.215Z [INFO] [TRANSPORT_DETECT] 📡 Attempting JSON-RPC transport...
+2025-11-29T00:00:37.215Z [DEBUG] [SESSION] MCP JSON-RPC message being sent to WordPress:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "original_mcp_id": "none",
+  "session_id": "not-yet-obtained"
+}
+2025-11-29T00:00:37.216Z [INFO] [TRANSPORT_DETECT] Sending initialization message via JSON-RPC:
+{
+  "method": "initialize",
+  "id": 1,
+  "jsonrpc": "2.0",
+  "hasParams": true
+}
+2025-11-29T00:00:37.216Z [DEBUG] [TRANSPORT_DETECT] Complete JSON-RPC init message:
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "id": 1,
+  "params": {
+    "protocolVersion": "2025-06-18",
+    "capabilities": {
+      "roots": {}
+    },
+    "clientInfo": {
+      "name": "claude-code",
+      "version": "2.0.55",
+      "proxied": {
+        "name": "@automattic/mcp-wordpress-remote",
+        "version": "0.2.18"
+      }
+    },
+    "_proxy_request_id": 1
+  }
+}
+2025-11-29T00:00:37.216Z [INFO] [API] Request method: initialize (JSON-RPC)
+2025-11-29T00:00:37.217Z [DEBUG] [API] JSON-RPC message: {"jsonrpc":"2.0","method":"initialize","id":1,"params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientInfo":{"name":"claude-code","version":"2.0.55","proxied":{"name":"@automattic/mcp-wordpress-remote","version":"0.2.18"}},"_proxy_request_id":1}}
+2025-11-29T00:00:37.217Z [INFO] [AUTH] Using WordPress Basic Auth for method: initialize
+2025-11-29T00:00:37.217Z [DEBUG] [AUTH] Username length: 5
+2025-11-29T00:00:37.217Z [DEBUG] [AUTH] Password length: 29
+2025-11-29T00:00:37.217Z [DEBUG] [AUTH] Auth header length: 48
+2025-11-29T00:00:37.217Z [DEBUG] [API] Environment: development
+2025-11-29T00:00:37.217Z [DEBUG] [API] Base API URL: https://devactivo.com/
+2025-11-29T00:00:37.217Z [DEBUG] [API] Final requesting URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:37.218Z [DEBUG] [API] Using Authorization header for authentication
+2025-11-29T00:00:37.218Z [INFO] [API] Sending request to WordPress API...
+2025-11-29T00:00:37.218Z [DEBUG] [API] Request URL: https://devactivo.com/?rest_route=/wp/v2/wpmcp
+2025-11-29T00:00:37.218Z [DEBUG] [API] Request method: POST
+2025-11-29T00:00:37.815Z [DEBUG] [API] Response status: 200
+2025-11-29T00:00:37.821Z [INFO] [API] Response received successfully
+2025-11-29T00:00:37.821Z [DEBUG] [API] Response data: {"protocolVersion":"2025-03-26","serverInfo":{"name":"WordPress MCP Server","version":"0.2.5","siteInfo":{"name":"Devactivo Diseño Y Desarrollo Web Tuxtla","url":"https://devactivo.com","description":"Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.","language":"es","charset":"UTF-8"}},"capabilities":{"tools":{"list":true,"call":true},"resources":{"list":true,"subscribe":true,"listChanged":true},"prompts":{"list":true,"get":true,"listChanged":true},"logging":{},"completion":{},"roots":{"list":true,"listChanged":true}},"instructions":"This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."}
+2025-11-29T00:00:37.821Z [INFO] [TRANSPORT_DETECT] ✅ JSON-RPC transport detected and working
+2025-11-29T00:00:37.821Z [DEBUG] [TRANSPORT_DETECT] JSON-RPC initialization response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}
+2025-11-29T00:00:37.821Z [WARN] [PROXY] No session ID received from WordPress - continuing without session
+2025-11-29T00:00:37.821Z [INFO] [PROXY] WordPress connection initialized successfully using jsonrpc transport
+2025-11-29T00:00:37.822Z [INFO] [INIT] ✅ Returning WordPress server initialize response
+2025-11-29T00:00:37.822Z [DEBUG] [INIT] Initialize response:
+{
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "WordPress MCP Server",
+    "version": "0.2.5",
+    "siteInfo": {
+      "name": "Devactivo Diseño Y Desarrollo Web Tuxtla",
+      "url": "https://devactivo.com",
+      "description": "Desarrollo web y programación de aplicaciones en Tuxtla Gutierrez, Chiapas.",
+      "language": "es",
+      "charset": "UTF-8"
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": true,
+      "call": true
+    },
+    "resources": {
+      "list": true,
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "list": true,
+      "get": true,
+      "listChanged": true
+    },
+    "logging": {},
+    "completion": {},
+    "roots": {
+      "list": true,
+      "listChanged": true
+    }
+  },
+  "instructions": "This is a WordPress MCP Server implementation that provides tools, resources, and prompts for interacting with the WordPress site Devactivo Diseño Y Desarrollo Web Tuxtla (https://devactivo.com)."
+}

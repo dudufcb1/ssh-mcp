@@ -38,16 +38,61 @@
 - Built with TypeScript and the official MCP SDK
 - **Configurable timeout protection** with automatic process abortion
 - **Graceful timeout handling** - attempts to kill hanging processes before closing connections
+- **🔒 Jail/Sandbox System** - Restrict agent operations to specific directories for enhanced security
+- **Path traversal protection** - Automatic blocking of `../` and other directory escape attempts
 
 ### Tools
 
-- `exec`: Execute a shell command on the remote server
+- `ssh-access-default`: Execute a shell command on the default SSH server using hardcoded configuration
   - **Parameters:**
     - `command` (required): Shell command to execute on the remote SSH server
+  - **Security:** Automatically validates commands against jail configuration if enabled
+
+- `ssh-access-with-credentials`: Execute a shell command using dynamic credentials
+  - **Parameters:**
+    - `command` (required): Shell command to execute on the remote SSH server
+  - **Security:** Automatically validates commands against jail configuration if enabled
   - **Timeout Configuration:**
     - Timeout is configured via command line argument `--timeout` (in milliseconds)
     - Default timeout: 60000ms (1 minute)
-    - When a command times out, the server automatically attempts to abort the running process before closing the connection
+    - When a command times out, the server automatically attempts to abort the running process
+
+- `sftp-list-files`: List files and directories in a remote path using SFTP
+  - **Parameters:**
+    - `remotePath` (required): Remote directory path to list
+  - **Security:** Path is validated against jail configuration if enabled
+
+- `sftp-upload`: Upload a local file to the remote server using SFTP
+  - **Parameters:**
+    - `localPath` (required): Local file path to upload
+    - `remotePath` (required): Remote file path where the file will be saved
+    - `mode` (optional): File permissions in octal format (default: '644')
+  - **Security:** Remote path is validated against jail configuration if enabled
+
+- `sftp-download`: Download a file from the remote server using SFTP
+  - **Parameters:**
+    - `remotePath` (required): Remote file path to download
+    - `localPath` (optional): Local file path to save the downloaded file
+    - `asText` (optional): Return file content as text (default: false)
+  - **Security:** Remote path is validated against jail configuration if enabled
+
+- `ssh-configure`: Configure SSH connection parameters for the current session
+  - **Parameters:**
+    - `host` (required): SSH server hostname or IP address
+    - `port` (optional): SSH port (default: 22)
+    - `username` (required): SSH username
+    - `password` (optional): SSH password
+    - `privateKeyPath` (optional): Path to private SSH key file
+    - `timeout` (optional): Command execution timeout in milliseconds
+
+- `ssh-status`: Show current SSH connection configuration status and manage sessions
+  - **Parameters:**
+    - `action` (optional): 'show' displays current config, 'clear' removes temporal config
+
+- `ssh-jail-info`: Show comprehensive information about the Jail/Sandbox system
+  - **Parameters:**
+    - `section` (optional): 'status', 'config', 'examples', 'troubleshooting', or 'all' (default)
+  - **Usage:** Get help on jail configuration and troubleshooting
 
 ## Installation
 
@@ -75,6 +120,43 @@ You can configure Claude Desktop to use this MCP Server.
 - `key`: Path to private SSH key
 - `timeout`: Command execution timeout in milliseconds (default: 60000ms = 1 minute)
 
+### Jail/Sandbox Configuration (Optional but Recommended)
+
+The jail system restricts the agent's operations to a specific directory, preventing accidental or malicious access to other parts of the server.
+
+**Environment Variables:**
+- `SSH_JAIL_PATH`: (Required if jail enabled) Absolute path to the jail directory
+- `SSH_JAIL_ENABLED`: Set to "true" to enable jail protection
+- `SSH_JAIL_STRICT`: Set to "true" to prevent jail from being disabled during session
+
+**Example Configuration with Jail:**
+
+```json
+{
+    "mcpServers": {
+        "ssh-mcp-project-a": {
+            "command": "npx",
+            "args": [
+                "ssh-mcp",
+                "-y",
+                "--",
+                "--host=1.2.3.4",
+                "--port=22",
+                "--user=username",
+                "--password=password",
+                "--timeout=30000"
+            ],
+            "env": {
+                "SSH_JAIL_PATH": "/home/user/domains/project-a.com",
+                "SSH_JAIL_ENABLED": "true",
+                "SSH_JAIL_STRICT": "true"
+            }
+        }
+    }
+}
+```
+
+**Multiple Projects Example:**
 
 ```commandline
 {
@@ -92,9 +174,58 @@ You can configure Claude Desktop to use this MCP Server.
                 "--key=path/to/key",
                 "--timeout=30000"
             ]
+        },
+        "ssh-mcp-project-b": {
+            "command": "npx",
+            "args": [
+                "ssh-mcp",
+                "-y",
+                "--",
+                "--host=1.2.3.4",
+                "--port=22",
+                "--user=username",
+                "--password=password"
+            ],
+            "env": {
+                "SSH_JAIL_PATH": "/home/user/domains/project-b.com",
+                "SSH_JAIL_ENABLED": "true",
+                "SSH_JAIL_STRICT": "true"
+            }
         }
     }
 }
+```
+
+### Security Features
+
+The jail system provides multiple layers of protection:
+
+✅ **Path Validation**: All file operations are validated against the jail path
+✅ **Command Wrapping**: SSH commands are automatically prefixed to run within the jail
+✅ **Path Traversal Protection**: Attempts to use `../` or access parent directories are blocked
+✅ **Security Logging**: All blocked access attempts are logged for audit purposes
+✅ **Strict Mode**: When enabled, the jail cannot be disabled during the session
+
+**Example blocked operations:**
+- Accessing `/etc/passwd` when jail is `/home/user/project`
+- Using `cd ../../` to navigate outside the jail
+- SFTP operations outside the configured directory
+
+**Getting Help:**
+
+Use the `ssh-jail-info` tool to get comprehensive information about jail configuration:
+```bash
+# Show all information
+ssh-jail-info()
+
+# Show only current status
+ssh-jail-info({ section: "status" })
+
+# Show configuration examples
+ssh-jail-info({ section: "examples" })
+
+# Show troubleshooting guide
+ssh-jail-info({ section: "troubleshooting" })
 ```
 
 ## Testing
