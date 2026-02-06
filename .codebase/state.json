@@ -1,0 +1,23 @@
+{
+  "workspacePath": "/media/eduardo/56087475087455C9/Dev/ssh-mcp",
+  "qdrantCollection": "codebase-7b525f8bf23544a0a9",
+  "createdAt": "2026-02-01T23:13:16.034Z",
+  "updatedAt": "2026-02-01T23:20:46.867Z",
+  "lastActivity": {
+    "timestamp": "2026-02-01T23:15:34.290Z",
+    "action": "indexed",
+    "filePath": "src/index.ts",
+    "details": {
+      "blockCount": 132
+    }
+  },
+  "indexingStatus": {
+    "state": "idle"
+  },
+  "qdrantStats": {
+    "totalVectors": 410,
+    "uniqueFiles": 8,
+    "vectorDimension": 1536,
+    "lastUpdated": "2026-02-01T23:13:46.805Z"
+  }
+}
